@@ -6402,27 +6402,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.08, y: 0, z: 0.08}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3629749883262244470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9147108965366921999}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea7a909ddc5664a9ba8fda96956a3a6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Scope: 1
-  m_IconPath: Assets/LEGO/Gizmos/LEGO Behaviour Icons/Hazard Action.png
-  m_FlashColour: {r: 1.4117647, g: 0, b: 0, a: 2}
-  m_Brick: {fileID: 1457518447891867596}
-  m_BrickPivotOffset: {x: -0.40000117, y: 0.569, z: -0.3999868}
-  m_Audio: {fileID: 8300000, guid: 0d1868b0fe702453aad8d4deb4868591, type: 3}
-  m_AudioVolume: 1
-  m_Effect: {fileID: 6495044552919392668, guid: 173b64c55a438417294f0118f8fc367b,
-    type: 3}
 --- !u!1 &3204982226981475081
 GameObject:
   m_ObjectHideFlags: 0
@@ -17670,6 +17649,27 @@ MonoBehaviour:
   - {fileID: 7546831515478588286}
   axleFields: []
   fixedFields: []
+--- !u!114 &3629749883262244470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9147108965366921999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea7a909ddc5664a9ba8fda96956a3a6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Scope: 1
+  m_IconPath: Assets/LEGO/Gizmos/LEGO Behaviour Icons/Hazard Action.png
+  m_FlashColour: {r: 1.4117647, g: 0, b: 0, a: 2}
+  m_Brick: {fileID: 1457518447891867596}
+  m_BrickPivotOffset: {x: -0.40000117, y: 0.569, z: -0.3999868}
+  m_Audio: {fileID: 8300000, guid: 0d1868b0fe702453aad8d4deb4868591, type: 3}
+  m_AudioVolume: 1
+  m_Effect: {fileID: 6495044552919392668, guid: 173b64c55a438417294f0118f8fc367b,
+    type: 3}
 --- !u!1001 &3200576852388193490
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17735,7 +17735,7 @@ PrefabInstance:
     - target: {fileID: 3453244826810790980, guid: 5f90c7d3098fc4659b7fc9bb45df5fa7,
         type: 3}
       propertyPath: m_Repeat
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3453244826810790980, guid: 5f90c7d3098fc4659b7fc9bb45df5fa7,
         type: 3}

@@ -121,6 +121,8 @@ namespace Unity.LEGO.Minifig
 
         MotionSetting activeRotationSetting;
 
+        GameObject controlsScreen;
+
         float rotationDuration;
         float rotationTime;
         float rotationSpeed;
@@ -131,6 +133,8 @@ namespace Unity.LEGO.Minifig
         {
             var rigidBody = gameObject.AddComponent<Rigidbody>();
             rigidBody.isKinematic = true;
+
+            controlsScreen = GameObject.Find("Controls");
 
             // Add trigger collider surrounding minifig to be used for collision detection.
             mainCollider = gameObject.AddComponent<BoxCollider>();
@@ -341,7 +345,7 @@ namespace Unity.LEGO.Minifig
                     performJump = true;
                 }
             }
-            else if (!Input.anyKey && inputHeld)
+            else if (!Input.anyKey && inputHeld && !controlsScreen)
             {
                 UpdateMovement(releasedSetting, releasedMovementType);
                 UpdateRotation(releasedSetting, releasedRotationType);

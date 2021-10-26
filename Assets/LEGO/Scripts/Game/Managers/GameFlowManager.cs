@@ -98,6 +98,11 @@ namespace Unity.LEGO.Game
             }
         }
 
+        public void GameEnding()
+        {
+            StartCoroutine(ZoomInOnPlayer());
+        }
+
         void OnGameOver(GameOverEvent evt)
         {
             if (!GameIsEnding)

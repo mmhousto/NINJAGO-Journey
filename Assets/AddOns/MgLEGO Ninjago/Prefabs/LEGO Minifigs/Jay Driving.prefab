@@ -4542,7 +4542,6 @@ GameObject:
   - component: {fileID: 7710599043865447583}
   - component: {fileID: 7710599043865447582}
   - component: {fileID: 7710599043865447777}
-  - component: {fileID: 7710599043865447776}
   - component: {fileID: 6937983073862486810}
   - component: {fileID: 5667580733916666126}
   - component: {fileID: 512531361997178623}
@@ -4760,42 +4759,6 @@ MonoBehaviour:
   defaultTexture: {fileID: 2800000, guid: 116e786ac7ddf4a80a89f231d9d63ca4, type: 3}
   animations: 
   animationData: []
---- !u!114 &7710599043865447776
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7710599043865447779}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 652629fecff6a4c8fa0a985e628de942, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxForwardSpeed: 12
-  maxBackwardSpeed: 6
-  acceleration: 40
-  maxRotateSpeed: 450
-  rotateAcceleration: 500
-  jumpSpeed: 20
-  gravity: 0
-  stepAudioClips:
-  - {fileID: 8300000, guid: 39948ec2175e749819ecd850a1d0e5af, type: 3}
-  - {fileID: 8300000, guid: 97adc7a6316eb42039437d84c81b25c9, type: 3}
-  - {fileID: 8300000, guid: 325a89399f940412abe873057ca26add, type: 3}
-  - {fileID: 8300000, guid: 2a988a8f5a6ac4c5a9084b2a952daa59, type: 3}
-  jumpAudioClip: {fileID: 8300000, guid: 542490ca55814441981ef88f5d1f2dc6, type: 3}
-  doubleJumpAudioClip: {fileID: 8300000, guid: 542490ca55814441981ef88f5d1f2dc6, type: 3}
-  landAudioClip: {fileID: 8300000, guid: a12caccc734354aa09f7d2a412925ac2, type: 3}
-  explodeAudioClip: {fileID: 8300000, guid: b9b607b06267c4394b07c19523c455f1, type: 3}
-  inputType: 1
-  inputEnabled: 0
-  maxJumpsInAir: 1
-  leftArmTip: {fileID: 7710599043467819181}
-  rightArmTip: {fileID: 7710599042465090719}
-  leftLegTip: {fileID: 7710599043385415433}
-  rightLegTip: {fileID: 7710599042633966045}
-  head: {fileID: 7710599042825257681}
 --- !u!114 &6937983073862486810
 MonoBehaviour:
   m_ObjectHideFlags: 0

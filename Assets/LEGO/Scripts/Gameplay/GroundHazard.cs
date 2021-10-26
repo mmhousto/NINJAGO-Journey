@@ -11,6 +11,7 @@ namespace Unity.LEGO.Gameplay
             {
                 GameOverEvent evt = Events.GameOverEvent;
                 evt.Win = false;
+                evt.Active = true;
                 EventManager.Broadcast(evt);
             }
         }

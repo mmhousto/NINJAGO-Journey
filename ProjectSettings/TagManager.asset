@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Projectile
   - TutorialRequirement
+  - Cinemachine
+  - Spawn
+  - Reset
   layers:
   - Default
   - TransparentFX

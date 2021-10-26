@@ -210,6 +210,7 @@ namespace Unity.LEGO.Behaviours
             {
                 GameOverEvent evt = Events.GameOverEvent;
                 evt.Win = false;
+                evt.Active = true;
                 EventManager.Broadcast(evt);
             }
 

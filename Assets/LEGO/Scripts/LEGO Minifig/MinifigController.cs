@@ -73,7 +73,7 @@ namespace Unity.LEGO.Minifig
             CompletingFollow,
         }
 
-        public float maxForwardSpeed = 5f;
+        public float maxForwardSpeed = 50f;
         [Range(4, 8)]
         public float maxBackwardSpeed = 4f;
         [Range(1, 60)]
@@ -181,6 +181,7 @@ namespace Unity.LEGO.Minifig
         protected Vector3 moveDelta = Vector3.zero;
         protected bool stopSpecial;
         protected bool cancelSpecial;
+        protected bool hasStarted = false;
 
         List<MoveTarget> moves = new List<MoveTarget>();
         MoveTarget currentMove;
@@ -209,7 +210,7 @@ namespace Unity.LEGO.Minifig
 
         protected virtual void OnValidate()
         {
-            maxForwardSpeed = Mathf.Clamp(maxForwardSpeed, 5, 30);
+            maxForwardSpeed = Mathf.Clamp(maxForwardSpeed, 5, 300);
 
             if (!leftArmTip || !rightArmTip || !leftLegTip || !rightLegTip || !head)
             {
@@ -250,13 +251,13 @@ namespace Unity.LEGO.Minifig
             }
 
             // Handle input.
-            if (inputEnabled)
+            if (inputEnabled && hasStarted)
             {
 
                 // Calculate move delta.
                 speed = 8f;
                 animator.SetFloat(speedHash, speed);
-                controller.Move(Vector3.forward * -.05f);
+                controller.Move(Vector3.forward * -.33f);
 
                 // Check if player is grounded.
                 if (!airborne)
@@ -301,6 +302,11 @@ namespace Unity.LEGO.Minifig
             else
             {
                 HandleAutomaticAnimation();
+            }
+
+            if (Input.GetButtonDown("Jump") && !hasStarted)
+            {
+                hasStarted = true;
             }
 
             HandleMotion();

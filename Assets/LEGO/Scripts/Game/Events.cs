@@ -32,6 +32,7 @@ namespace Unity.LEGO.Game
     public class GameOverEvent : GameEvent
     {
         public bool Win;
+        public bool Active;
     }
 
     public class LookSensitivityUpdateEvent : GameEvent

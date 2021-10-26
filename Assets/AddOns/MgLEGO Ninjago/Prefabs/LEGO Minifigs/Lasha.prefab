@@ -2389,7 +2389,6 @@ GameObject:
   - component: {fileID: 5176292380675896026}
   - component: {fileID: 5176292380675896027}
   - component: {fileID: 5176292380675896100}
-  - component: {fileID: 5176292380675896101}
   - component: {fileID: 5520503144067462495}
   - component: {fileID: 2033197261658964228}
   - component: {fileID: 7094053569981917003}
@@ -2398,6 +2397,8 @@ GameObject:
   - component: {fileID: 2573454019121783051}
   - component: {fileID: 5617481258525974727}
   - component: {fileID: 6628998318733931423}
+  - component: {fileID: -5389167514651856178}
+  - component: {fileID: 285744887474544897}
   m_Layer: 9
   m_Name: Lasha
   m_TagString: Player
@@ -2608,42 +2609,6 @@ MonoBehaviour:
   defaultTexture: {fileID: 2800000, guid: 116e786ac7ddf4a80a89f231d9d63ca4, type: 3}
   animations: 
   animationData: []
---- !u!114 &5176292380675896101
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5176292380675896102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 652629fecff6a4c8fa0a985e628de942, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxForwardSpeed: 12
-  maxBackwardSpeed: 6
-  acceleration: 40
-  maxRotateSpeed: 450
-  rotateAcceleration: 500
-  jumpSpeed: 20
-  gravity: 40
-  stepAudioClips:
-  - {fileID: 8300000, guid: 39948ec2175e749819ecd850a1d0e5af, type: 3}
-  - {fileID: 8300000, guid: 97adc7a6316eb42039437d84c81b25c9, type: 3}
-  - {fileID: 8300000, guid: 325a89399f940412abe873057ca26add, type: 3}
-  - {fileID: 8300000, guid: 2a988a8f5a6ac4c5a9084b2a952daa59, type: 3}
-  jumpAudioClip: {fileID: 8300000, guid: 542490ca55814441981ef88f5d1f2dc6, type: 3}
-  doubleJumpAudioClip: {fileID: 8300000, guid: 542490ca55814441981ef88f5d1f2dc6, type: 3}
-  landAudioClip: {fileID: 8300000, guid: a12caccc734354aa09f7d2a412925ac2, type: 3}
-  explodeAudioClip: {fileID: 8300000, guid: b9b607b06267c4394b07c19523c455f1, type: 3}
-  inputType: 1
-  inputEnabled: 1
-  maxJumpsInAir: 1
-  leftArmTip: {fileID: 5176292381081978600}
-  rightArmTip: {fileID: 5176292381539381978}
-  leftLegTip: {fileID: 5176292381130631500}
-  rightLegTip: {fileID: 5176292381301170072}
-  head: {fileID: 5176292381648977044}
 --- !u!114 &5520503144067462495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2767,6 +2732,118 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onlyActiveGameObject: 0
   hideChildren: 1
+--- !u!114 &-5389167514651856178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5176292380675896102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6988ca2c3e847474b8d54dfe7fcb4b8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelChunks:
+  - {fileID: 1885955191194501109, guid: 8d13e5cefa4a0194fb28c8af02fe4b65, type: 3}
+  - {fileID: 1817300469371494683, guid: 70489c288c24cd44a8d83749fa4ebe93, type: 3}
+  - {fileID: 8507446883735395565, guid: d483e28ad85838a4886d4d39be97e5f7, type: 3}
+  - {fileID: 269638624588769625, guid: 2ec35dd54d73ef44990e7d904f41ddf6, type: 3}
+  - {fileID: 7346000628140527066, guid: b2ecdf0e920e9364c8d1f73637d157cc, type: 3}
+  - {fileID: 6428653089673593667, guid: 286cd27dbace995469842da48741dd53, type: 3}
+  - {fileID: 1885955191194501109, guid: 8d13e5cefa4a0194fb28c8af02fe4b65, type: 3}
+  - {fileID: 1817300469371494683, guid: 70489c288c24cd44a8d83749fa4ebe93, type: 3}
+  - {fileID: 8507446883735395565, guid: d483e28ad85838a4886d4d39be97e5f7, type: 3}
+  - {fileID: 269638624588769625, guid: 2ec35dd54d73ef44990e7d904f41ddf6, type: 3}
+  - {fileID: 7346000628140527066, guid: b2ecdf0e920e9364c8d1f73637d157cc, type: 3}
+  - {fileID: 6428653089673593667, guid: 286cd27dbace995469842da48741dd53, type: 3}
+  - {fileID: 1885955191194501109, guid: 8d13e5cefa4a0194fb28c8af02fe4b65, type: 3}
+  spawnOrigin: {x: 220, y: 0, z: 90}
+--- !u!114 &285744887474544897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5176292380675896102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d4a0c2b84621af40a168aca956183f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxForwardSpeed: 50
+  maxBackwardSpeed: 4
+  acceleration: 20
+  maxRotateSpeed: 0
+  rotateAcceleration: 0
+  jumpSpeed: 25
+  gravity: 40
+  stepAudioClips:
+  - {fileID: 8300000, guid: 39948ec2175e749819ecd850a1d0e5af, type: 3}
+  - {fileID: 8300000, guid: 97adc7a6316eb42039437d84c81b25c9, type: 3}
+  - {fileID: 8300000, guid: 325a89399f940412abe873057ca26add, type: 3}
+  - {fileID: 8300000, guid: 2a988a8f5a6ac4c5a9084b2a952daa59, type: 3}
+  jumpAudioClip: {fileID: 8300000, guid: 542490ca55814441981ef88f5d1f2dc6, type: 3}
+  doubleJumpAudioClip: {fileID: 8300000, guid: 542490ca55814441981ef88f5d1f2dc6, type: 3}
+  landAudioClip: {fileID: 8300000, guid: a12caccc734354aa09f7d2a412925ac2, type: 3}
+  explodeAudioClip: {fileID: 8300000, guid: b9b607b06267c4394b07c19523c455f1, type: 3}
+  inputType: 0
+  inputEnabled: 1
+  maxJumpsInAir: 1
+  leftArmTip: {fileID: 9097202087132686390, guid: b3e31678991c34748823b624932abc98,
+    type: 3}
+  rightArmTip: {fileID: 9097202086935305220, guid: b3e31678991c34748823b624932abc98,
+    type: 3}
+  leftLegTip: {fileID: 9097202087046252434, guid: b3e31678991c34748823b624932abc98,
+    type: 3}
+  rightLegTip: {fileID: 9097202086898823494, guid: b3e31678991c34748823b624932abc98,
+    type: 3}
+  head: {fileID: 9097202086557307466, guid: b3e31678991c34748823b624932abc98, type: 3}
+  startMovementType: 1
+  startRotationType: 0
+  pressedMovementType: 0
+  releasedMovementType: 0
+  pressedRotationType: 0
+  releasedRotationType: 0
+  startSetting:
+    moveDirection: 0
+    rotateDirection: 0
+    moveMaxSpeed: 20
+    moveDistance: 10
+    moveAcceleration: 20
+    rotateSpeed: 180
+    rotateAngle: 90
+    jump: 0
+    moveAlternate: 0
+    rotateAlternate: 0
+    previousMoveTarget: 0
+    previousRotateTarget: 0
+  pressedSetting:
+    moveDirection: 0
+    rotateDirection: 0
+    moveMaxSpeed: 10
+    moveDistance: 10
+    moveAcceleration: 20
+    rotateSpeed: 180
+    rotateAngle: 90
+    jump: 1
+    moveAlternate: 0
+    rotateAlternate: 0
+    previousMoveTarget: 0
+    previousRotateTarget: 0
+  releasedSetting:
+    moveDirection: 0
+    rotateDirection: 0
+    moveMaxSpeed: 10
+    moveDistance: 10
+    moveAcceleration: 20
+    rotateSpeed: 180
+    rotateAngle: 90
+    jump: 0
+    moveAlternate: 0
+    rotateAlternate: 0
+    previousMoveTarget: 0
+    previousRotateTarget: 0
 --- !u!1 &5176292380684102762
 GameObject:
   m_ObjectHideFlags: 0
