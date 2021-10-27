@@ -9,6 +9,8 @@ TagManager:
   - Cinemachine
   - Spawn
   - Reset
+  - Enemy
+  - HUD
   layers:
   - Default
   - TransparentFX

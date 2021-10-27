@@ -6,8 +6,8 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using Unity.LEGO.Game;
 
-    public class GameManager : MonoBehaviour
-    {
+public class GameManager : MonoBehaviour
+{
         private GameManager _instance;
 
         public GameManager Instacne { get { return _instance; } }
@@ -21,6 +21,8 @@ using Unity.LEGO.Game;
         public CinemachineVirtualCamera cam;
 
         public TextMeshProUGUI scoreText;
+
+        private int[] highscores;
 
         private GameObject player;
 
@@ -54,7 +56,16 @@ using Unity.LEGO.Game;
 
         private void Start()
         {
+            SceneManager.activeSceneChanged += EndGame;
             Time.timeScale = 0;
+
+            highscores = new int[] { 
+                PlayerPrefs.GetInt("Highscore", 0),
+                PlayerPrefs.GetInt("Highscore2", 0),
+                PlayerPrefs.GetInt("Highscore3", 0),
+                PlayerPrefs.GetInt("Highscore4", 0),
+                PlayerPrefs.GetInt("Highscore5", 0) 
+            };
 
         }
 
@@ -80,17 +91,81 @@ using Unity.LEGO.Game;
 
         }
 
-        public void EndGame()
+    public void EndGame()
+    {
+        gameEnded = true;
+        if (score > PlayerPrefs.GetInt("Highscore", 0))
         {
-            gameEnded = true;
-            if(score > PlayerPrefs.GetInt("Highscore", 0))
-            {
-                PlayerPrefs.SetInt("Highscore", (int)score);
-            }
-            Debug.Log(score);
-            
-            // Send score to try again screen
-            
+            PlayerPrefs.SetInt("Highscore", (int)score);
+            PlayerPrefs.SetInt("Highscore2", highscores[0]);
+            PlayerPrefs.SetInt("Highscore3", highscores[1]);
+            PlayerPrefs.SetInt("Highscore4", highscores[2]);
+            PlayerPrefs.SetInt("Highscore5", highscores[3]);
         }
+        else if (score > PlayerPrefs.GetInt("Highscore2", 0))
+        {
+            PlayerPrefs.SetInt("Highscore2", (int)score);
+            PlayerPrefs.SetInt("Highscore3", highscores[1]);
+            PlayerPrefs.SetInt("Highscore4", highscores[2]);
+            PlayerPrefs.SetInt("Highscore5", highscores[3]);
+        }
+        else if (score > PlayerPrefs.GetInt("Highscore3", 0))
+        {
+            PlayerPrefs.SetInt("Highscore3", (int)score);
+            PlayerPrefs.SetInt("Highscore4", highscores[2]);
+            PlayerPrefs.SetInt("Highscore5", highscores[3]);
+        }
+        else if (score > PlayerPrefs.GetInt("Highscore4", 0))
+        {
+            PlayerPrefs.SetInt("Highscore4", (int)score);
+            PlayerPrefs.SetInt("Highscore5", highscores[3]);
+        }
+        else if (score > PlayerPrefs.GetInt("Highscore5", 0))
+        {
+            PlayerPrefs.SetInt("Highscore5", (int)score);
+        }
+        Debug.Log(score);
+
+        // Send score to try again screen
 
     }
+
+    public void EndGame(Scene current, Scene next)
+    {
+        gameEnded = true;
+        if(score > PlayerPrefs.GetInt("Highscore", 0))
+        {
+            PlayerPrefs.SetInt("Highscore", (int)score);
+            PlayerPrefs.SetInt("Highscore2", highscores[0]);
+            PlayerPrefs.SetInt("Highscore3", highscores[1]);
+            PlayerPrefs.SetInt("Highscore4", highscores[2]);
+            PlayerPrefs.SetInt("Highscore5", highscores[3]);
+        } else if(score > PlayerPrefs.GetInt("Highscore2", 0))
+        {
+            PlayerPrefs.SetInt("Highscore2", (int)score);
+            PlayerPrefs.SetInt("Highscore3", highscores[1]);
+            PlayerPrefs.SetInt("Highscore4", highscores[2]);
+            PlayerPrefs.SetInt("Highscore5", highscores[3]);
+        }
+        else if (score > PlayerPrefs.GetInt("Highscore3", 0))
+        {
+            PlayerPrefs.SetInt("Highscore3", (int)score);
+            PlayerPrefs.SetInt("Highscore4", highscores[2]);
+            PlayerPrefs.SetInt("Highscore5", highscores[3]);
+        }
+        else if (score > PlayerPrefs.GetInt("Highscore4", 0))
+        {
+            PlayerPrefs.SetInt("Highscore4", (int)score);
+            PlayerPrefs.SetInt("Highscore5", highscores[3]);
+        }
+        else if (score > PlayerPrefs.GetInt("Highscore5", 0))
+        {
+            PlayerPrefs.SetInt("Highscore5", (int)score);
+        }
+        Debug.Log(score);
+            
+        // Send score to try again screen
+            
+    }
+
+}
