@@ -9,16 +9,13 @@ public class Highscore : MonoBehaviour
 
     public TextMeshProUGUI titleText;
 
-    private TextMeshProUGUI scoreText;
     private int hiScore1, hiScore2, hiScore3, hiScore4, hiScore5;
     private int playerScore = 0;
-    
 
     // Start is called before the first frame update
     void Start()
     {
-        playerScore = 0;
-        scoreText = GameObject.FindWithTag("HUD").GetComponent<TextMeshProUGUI>();
+        playerScore = PlayerPrefs.GetInt("Score", 0);
 
         hiScore1 = PlayerPrefs.GetInt("Highscore", 0);
         hiscoreText1.text = "Highscore #1: " + hiScore1.ToString();
@@ -31,8 +28,6 @@ public class Highscore : MonoBehaviour
         hiScore5 = PlayerPrefs.GetInt("Highscore5", 0);
         hiscoreText5.text = "Highscore #5: " + hiScore5.ToString();
 
-        if (scoreText)
-            int.TryParse(scoreText.text, out playerScore);
         Debug.Log(playerScore);
     }
 

@@ -8,9 +8,6 @@ using Unity.LEGO.Game;
 
 public class GameManager : MonoBehaviour
 {
-        private GameManager _instance;
-
-        public GameManager Instacne { get { return _instance; } }
 
         private Vector3 startPos;
         private Vector3 startRot;
@@ -26,40 +23,40 @@ public class GameManager : MonoBehaviour
 
         private GameObject player;
 
-        private float score = 0;
+        [SerializeField] private float score = 0;
 
-        private bool gameStarted = false;
+        [SerializeField] private bool gameStarted = false;
 
-        private bool gameEnded = false;
+        [SerializeField] private bool gameEnded = false;
 
         private void Awake()
         {
-            if(_instance != null && _instance != this)
-            {
-                Destroy(this);
-            }
-            else
-            {
-                _instance = this;
-            }
-
-            startPos = new Vector3(217.8066f, 1.4f, 268.3027f);
-            startRot = new Vector3(0, 180f, 0);
-            selectedChar = Random.Range(0, 9);
-            player = Instantiate(playerPrefabs[selectedChar], startPos, Quaternion.Euler(startRot));
-            cam.Follow = player.transform;
-            cam.LookAt = player.transform;
-
+        gameEnded = true;
+            
 
 
         }
 
         private void Start()
         {
+            
+            startPos = new Vector3(217.8066f, 1.4f, 268.3027f);
+            startRot = new Vector3(0, 180f, 0);
+            selectedChar = Random.Range(0, 9);
+            score = 0.0f;
+            player = Instantiate(playerPrefabs[selectedChar], startPos, Quaternion.Euler(startRot));
+            cam.Follow = player.transform;
+            cam.LookAt = player.transform;
+            
+
             SceneManager.activeSceneChanged += EndGame;
+
+            gameStarted = false;
+            gameEnded = false;
             Time.timeScale = 0;
 
-            highscores = new int[] { 
+
+        highscores = new int[] { 
                 PlayerPrefs.GetInt("Highscore", 0),
                 PlayerPrefs.GetInt("Highscore2", 0),
                 PlayerPrefs.GetInt("Highscore3", 0),
@@ -69,10 +66,21 @@ public class GameManager : MonoBehaviour
 
         }
 
-        public void StartGame()
+    private void OnDestroy()
+    {
+        SceneManager.activeSceneChanged -= EndGame;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.activeSceneChanged -= EndGame;
+    }
+
+    public void StartGame()
         {
             Time.timeScale = 1;
             gameStarted = true;
+            gameEnded = false;
             
         }
 
@@ -87,6 +95,9 @@ public class GameManager : MonoBehaviour
             if (Events.GameOverEvent.Active)
             {
                 EndGame();
+            } else
+            {
+                gameEnded = false;
             }
 
         }
@@ -124,8 +135,9 @@ public class GameManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("Highscore5", (int)score);
         }
-        Debug.Log(score);
 
+        PlayerPrefs.SetInt("Score", (int)score);
+        Debug.Log(score);
         // Send score to try again screen
 
     }
@@ -133,7 +145,7 @@ public class GameManager : MonoBehaviour
     public void EndGame(Scene current, Scene next)
     {
         gameEnded = true;
-        if(score > PlayerPrefs.GetInt("Highscore", 0))
+        if (score > PlayerPrefs.GetInt("Highscore", 0))
         {
             PlayerPrefs.SetInt("Highscore", (int)score);
             PlayerPrefs.SetInt("Highscore2", highscores[0]);
@@ -162,10 +174,11 @@ public class GameManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("Highscore5", (int)score);
         }
+
+        PlayerPrefs.SetInt("Score", (int)score);
         Debug.Log(score);
-            
         // Send score to try again screen
-            
+
     }
 
 }

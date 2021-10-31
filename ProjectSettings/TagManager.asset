@@ -11,6 +11,7 @@ TagManager:
   - Reset
   - Enemy
   - HUD
+  - Score
   layers:
   - Default
   - TransparentFX

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1118258156211871577}
   - component: {fileID: 7391199567690823833}
   - component: {fileID: 4153785008143841673}
+  - component: {fileID: 2742812527396405370}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -131,3 +132,30 @@ MonoBehaviour:
   m_VerticalLookSensitivityStep: 0.25
   m_HorizontalLookMinimumSensitivity: 50
   m_HorizontalLookSensitivityStep: 50
+--- !u!114 &2742812527396405370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2742812528658015893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43c933862af804b4cbfd1326e6236af9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPrefabs:
+  - {fileID: 8180712928422395528, guid: 6ff909b57994f4118850eecf7e46d2b4, type: 3}
+  - {fileID: 7279628523467781450, guid: 49113cfcc4c834acebd6f8cba79fd7fd, type: 3}
+  - {fileID: 6188291691215214343, guid: a407bd60899cf40b281473f5ea523045, type: 3}
+  - {fileID: 5183047410976949569, guid: 4ea89daecf0a14dabb30853cf4581f3e, type: 3}
+  - {fileID: 9097202085651340792, guid: b3e31678991c34748823b624932abc98, type: 3}
+  - {fileID: 5176292380675896102, guid: 53ccd1f9bd7b6473f8485c72da3afded, type: 3}
+  - {fileID: 5349333034196366325, guid: 42b506fddcd4a402e809ff14730b477c, type: 3}
+  - {fileID: 7738981211087073481, guid: 8f3809d60d80c4a818f5bcb4211953e4, type: 3}
+  - {fileID: 1013366621297560151, guid: 43d6beb3d79414643b8d81389421d104, type: 3}
+  cam: {fileID: 0}
+  scoreText: {fileID: 0}
+  score: 0
+  gameStarted: 0
+  gameEnded: 0

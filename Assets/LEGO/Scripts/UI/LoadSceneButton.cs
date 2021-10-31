@@ -24,5 +24,12 @@ namespace Unity.LEGO.UI
                 LoadScene();
             }
         }
+
+        public void ResetGame()
+        {
+            GameOverEvent evt = Events.GameOverEvent;
+            evt.Win = false;
+            evt.Active = false; 
+        }
     }
 }
